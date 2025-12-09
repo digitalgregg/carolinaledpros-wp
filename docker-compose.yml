@@ -1,0 +1,41 @@
+services:
+  wordpress:
+    image: wordpress:latest
+    container_name: carolina
+    restart: unless-stopped
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_DB_USER: wordpressuser
+      WORDPRESS_DB_PASSWORD: wordpresspassword
+    volumes:
+      - wordpress_data:/var/www/html
+      - ./wp-content:/var/www/html/wp-content
+      - ./php.ini:/usr/local/etc/php/conf.d/custom-php.ini
+    ports:
+      - 8080:80
+    networks:
+      - wordpress_net
+
+  db:
+    image: mysql:8.0
+    container_name: carolina_db
+    restart: unless-stopped
+    command: '--default-authentication-plugin=mysql_native_password'
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpressuser
+      MYSQL_PASSWORD: wordpresspassword
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - wordpress_net
+
+networks:
+  wordpress_net:
+    driver: bridge
+
+volumes:
+  wordpress_data:
+  db_data:

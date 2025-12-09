@@ -1,0 +1,11 @@
+{
+    "require-dev": {
+        "php-stubs/wordpress-stubs": "*",
+        "php-stubs/woocommerce-stubs": "*"
+    },
+    "config": {
+        "allow-plugins": {
+            "php-stubs/wordpress-stubs": true
+        }
+    }
+}

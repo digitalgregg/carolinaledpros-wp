@@ -1,0 +1,56 @@
+.DS_Store
+.vscode/
+node_modules
+vendor/
+
+# Env / secrets
+.env
+wp-config.php
+*.key
+*.pem
+
+# Logs / dumps
+*.log
+*.sql
+*.sql.gz
+
+# Docker
+docker-compose.override.yml
+docker-data/
+
+# --- WordPress ---
+# Ignore all of wp-content by default
+wp-content/*
+
+# Keep the directories that can contain your code
+!wp-content/themes/
+!wp-content/plugins/
+!wp-content/mu-plugins/
+
+# Ignore everything inside them...
+wp-content/themes/*
+wp-content/plugins/*
+wp-content/mu-plugins/*
+
+# ...except YOUR code (edit names below)
+!wp-content/themes/your-theme-name/
+!wp-content/plugins/socialtoolkitpresseditor/
+
+# Always ignore runtime folders anywhere under wp-content
+wp-content/**/uploads/
+wp-content/**/cache/
+wp-content/**/upgrade/
+wp-content/**/ai1wm-backups/
+wp-content/**/wpo-cache/
+wp-content/**/w3tc-config/
+wp-content/**/updraft/
+wp-content/**/uploads-old/
+wp-content/**/themes-old/
+wp-content/**/plugins-old/
+wp-content/**/upgrade-temp-*/
+
+# Node/build artifacts inside themes/plugins
+wp-content/**/node_modules/
+wp-content/**/dist/
+wp-content/**/build/
+wp-content/**/.cache/

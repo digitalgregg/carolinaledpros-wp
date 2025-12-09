@@ -1,0 +1,16 @@
+{
+  "name": "carolinaledpros",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass wp-content/themes/charlotteledpros/assets/scss:wp-content/themes/charlotteledpros/assets/css",
+    "sass:watch": "sass --watch wp-content/themes/charlotteledpros/assets/scss:wp-content/themes/charlotteledpros/assets/css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "sass": "^1.94.2"
+  }
+}
